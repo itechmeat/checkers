@@ -1,0 +1,20 @@
+:root {
+  --font-xs: 12px;
+  --font-s: 14px;
+  --font-m: 16px;
+  --font-l: 18px;
+  --font-xl: 22px;
+  --font-xxl: 32px;
+  --font-xxxl: 48px;
+
+  --font-semibold: 500;
+  --font-bold: 600;
+  --font-regular: 400;
+
+  --font-lh-regular: 1.25;
+
+  --font-body: var(--font-regular) var(--font-m) / var(--font-lh-regular);
+  --font-title: var(--font-semibold) var(--font-xxl) / var(--font-lh-regular);
+  --font-subtitle: var(--font-semibold) var(--font-xl) / var(--font-lh-regular);
+  --font-headline: var(--font-bold) var(--font-xxxl) / var(--font-lh-regular);
+}

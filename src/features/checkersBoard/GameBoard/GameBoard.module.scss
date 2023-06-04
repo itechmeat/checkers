@@ -1,0 +1,126 @@
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  background: #201402;
+  line-height: 1;
+}
+
+.squares {
+  flex: 0 0 90%;
+  display: grid;
+  grid-column-start: revert;
+  align-items: end;
+  position: relative;
+  margin: auto;
+  container-type: inline-size;
+}
+
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  background-color: #412908;
+  color: #ebc6ac;
+  user-select: none;
+
+  .squares & {
+    font-size: 4cqw;
+  }
+
+  .edgeH &,
+  .edgeV & {
+    background: none;
+    color: #ebc6ac;
+    font-size: 2cqw;
+  }
+
+  .edgeH & {
+    aspect-ratio: 1 / 0.4;
+  }
+
+  .edgeV & {
+    flex: 1;
+    aspect-ratio: auto;
+  }
+
+  .edgeT &,
+  .edgeR & {
+    transform: rotate(180deg);
+  }
+}
+
+.squareDark {
+  background-color: #ebc6ac;
+  color: #412908;
+}
+
+.squareClickable {
+  cursor: pointer;
+}
+
+.squareAvailable {
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0.5em;
+    border-radius: 50%;
+    box-shadow: 0 0 0.2em 0.2em #1dc3cf;
+  }
+}
+
+.edgeT,
+.edgeB {
+  flex: 0 0 100%;
+  display: grid;
+  align-items: center;
+  height: 5%;
+  padding: 0 5%;
+}
+
+.edgeV {
+  flex: 0 0 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  margin: 0;
+  font-weight: bold;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.chips {
+  position: absolute;
+  inset: 5%;
+  pointer-events: none;
+}
+
+.timeline {
+  position: absolute;
+  inset-block: 0;
+  top: 0;
+  left: 0;
+  width: 1%;
+  background: #105cb3;
+  transform: translateY(50%) scaleY(0);
+  transition: none;
+  pointer-events: none;
+}
+
+.timelineRival {
+  left: auto;
+  right: 0;
+  transform: translateY(-50%) scaleY(0);
+}
+
+.ownTurn {
+  transform: translateY(0) scaleY(1);
+  transition: transform 1000ms linear;
+}

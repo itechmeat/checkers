@@ -1,0 +1,6 @@
+:root {
+  --primary: #f00;
+  --primaryDarker: lch(from var(--primary) 90% c h);
+  --primaryGrayish: lch(from var(--primary) l 50% h);
+  --primaryYellowish: lch(from var(--primary) l c 77%);
+}

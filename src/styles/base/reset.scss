@@ -1,0 +1,21 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: -webkit-fill-available;
+}
+
+a,
+a:visited {
+  text-decoration-skip-ink: none;
+  transition: all ease 200ms;
+}
