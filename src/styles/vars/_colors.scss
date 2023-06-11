@@ -1,6 +1,24 @@
+$colors: (
+  primary: #073b4c,
+  secondary: #118ab2,
+  accent: #ffd166,
+  error: #ef476f,
+  warning: #ffd166,
+  success: #06d6a0,
+  dark: #000,
+);
+
 :root {
-  --primary: #f00;
-  --primaryDarker: lch(from var(--primary) 90% c h);
-  --primaryGrayish: lch(from var(--primary) l 50% h);
-  --primaryYellowish: lch(from var(--primary) l c 77%);
+  @each $color-name, $color-value in $colors {
+    --color-#{$color-name}: #{$color-value};
+
+    @for $i from 1 through 9 {
+      --color-#{$color-name}-#{100 - ($i*10)}: #{lighten($color-value, $i * 5)};
+    }
+  }
+
+  // aliases
+  --color-text: var(--color-dark);
+  --color-text-alt: #fff;
+  --color-border: var(--color-dark-30);
 }
